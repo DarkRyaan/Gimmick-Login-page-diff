@@ -5,71 +5,102 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700&display=swap" rel="stylesheet">
 
     <style>
         * {
-            font-family: 'Nunito';
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             color: white;
-            text-align: center;
             user-select: none;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
         }
 
         body {
-            background-color: black;
+            background-color: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: #111;
+            padding: 3rem;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            gap: 1.5rem;
+            box-shadow: 0 0 28px rgba(0, 0, 0, 0.7);
+            min-width: 380px;
         }
 
         h2 {
-            margin-top: 10vh;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.8rem;
         }
 
-        div {
-            margin-top: 15vh;
+        .inputs {
             display: flex;
-            gap: 3vw;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         input {
-            background-color: black;
-            border: none;
-            border-bottom: 1px solid white;
+            background-color: #181818;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            font-size: 1rem;
             color: white;
-            font-size: 3vh;
             outline: none;
-            width: 20vw;
-            padding: 0.5rem 0.5rem 0.5rem 0;
+            transition: 0.2s;
+        }
+
+        input:focus {
+            border-color: #4b8bff;
+            box-shadow: 0 0 6px #4b8bff70;
         }
 
         button {
-            background-color: black;
+            background-color: #4b8bff;
             border: none;
-            border-bottom: 1px solid oklch(70.7% 0.165 254.624);
-            color: oklch(70.7% 0.165 254.624);
-            font-size: 3vh;
-            width: 20vw;
-            padding: 0.5rem 0.5rem 0.5rem 0;
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
+            transition: 0.15s;
+        }
+
+        button:hover {
+            background-color: #3a7bfa;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.75;
         }
     </style>
 </head>
 
 <body>
-    <h2>gimmick $ login</h2>
+    <div class="card">
+        <h2>gimmick $ login</h2>
 
-    <div>
-        <input placeholder='gimkit username' id='username' type='text' />
-        <input placeholder='gimkit password' id='password' type='text' />
+        <div class="inputs">
+            <input placeholder='gimkit username' id='username' type='text' />
+            <input placeholder='gimkit password' id='password' type='text' />
+        </div>
+
         <button id='gimkitLogin'>login with gimkit</button>
+
+        <div class="note">
+            If you use Google login, add a password from gimkit.com/settings
+        </div>
     </div>
 
     <script src="login.js"></script>
